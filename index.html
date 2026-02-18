@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e0f2e" />
+    <title>Imprimérie Moderne — Commande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Client ID Google (à renseigner) -->
+    <meta name="google-client-id" content="" />
+  </head>
+  <body>
+    <noscript>Veuillez activer JavaScript pour utiliser cette application.</noscript>
+    <div class="bg-decor" aria-hidden="true">
+      <span class="bubble b1"></span>
+      <span class="bubble b2"></span>
+      <span class="bubble b3"></span>
+    </div>
+
+    <main class="app" role="main">
+      <!-- Écran de bienvenue -->
+      <section id="screen-welcome" class="screen active" aria-labelledby="title-welcome">
+        <header class="brand">
+          <div class="logo" aria-hidden="true">
+            <img src="images/Mian design logo with stylized nib.png" alt="Logo Mian" width="95" height="64" decoding="async" />
+          </div>
+          <span class="brand-name" style="font-size: 20px; position: relative; left: -15px;">Imprimérie Moderne</span>
+        </header>
+
+        <section class="hero">
+          <h1 id="title-welcome">Mbote</h1>
+          <p>Commandez vos impressions en quelques clics seulement et bénéficiez d’une qualité professionnelle irréprochable.</p>
+          <button id="btnStart" class="btn btn-primary">Commencer la commande</button>
+        </section>
+
+        <div class="card action" id="deliveryClaim" role="region" aria-label="Réclamez ma Livraison">
+          <strong style="font-size:16px">Réclamation sur vos Livraisons</strong>
+          <button id="btnDeliveryClaim" class="btn btn-primary " aria-label="Accéder" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdzZGX6j2-NOfrFFiiPkXtW6iSmHaViNDa_jbQ_uF1p4Fjq1A/viewform?usp=publish-editor">C'est parti</button>
+        </div>
+
+        <!-- Panneau de publicité passante (remplace les 3 features) -->
+        <section class="ads" aria-label="Panneau publicitaire">
+          <div class="ads-viewport">
+            <div class="ads-track" id="adsTrack">
+              <div class="ad-slide" style="--bg:#8b5cf6;">
+                <div class="ad-content">
+                  <strong>Promo -10%</strong>
+                  <span style="color:#e4e4e4;">Cartes de visite cette semaine</span>
+                </div>
+              </div>
+              <div class="ad-slide" style="--bg:#22d3ee;">
+                <div class="ad-content">
+                  <strong>Impression Express</strong>
+                  <span style="color:#000000;">Retrait le jour même</span>
+                </div>
+              </div>
+              <div class="ad-slide" style="--bg:#ef4444;">
+                <div class="ad-content">
+                  <strong>Design sur-mesure</strong>
+                  <span style="color:#e4e4e4;">Brief gratuit</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ads-dots" id="adsDots" role="tablist" aria-label="Navigation publicités">
+            <button aria-label="Annonce 1" aria-selected="true" role="tab" data-index="0"></button>
+            <button aria-label="Annonce 2" aria-selected="false" role="tab" data-index="1"></button>
+            <button aria-label="Annonce 3" aria-selected="false" role="tab" data-index="2"></button>
+          </div>
+        </section>
+      </section>
+
+      <!-- Écran de sélection -->
+      <section id="screen-order" class="screen" aria-labelledby="title-order" hidden>
+        <header class="topbar">
+          <button id="btnBack" class="icon-btn" aria-label="Retour">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <h2 id="title-order">Que voulez-vous commander ?</h2>
+        </header>
+
+        <section class="options-grid" role="list">
+          <div class="card action" id="helpQuestion" role="group" aria-label="En quoi puis-je vous aider ?">
+            <strong style="font-size:16px">En quoi puis-je vous aider ?</strong>
+            <div class="help-actions">
+              <button class="card action" id="btnImpression" aria-label="Impression" data-url="https://docs.google.com/forms/d/e/1FAIpQLSeH3TFxjPXsOmQG1ZEcUm96-qgp5II3511EmAhYz_NVfH_vcQ/viewform?usp=publish-editor">
+                <span class="ico ico-badge print" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="8" width="16" height="9" rx="2"/>
+                    <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
+                    <rect x="8" y="12" width="8" height="6" rx="1"/>
+                    <path d="M6 11h12"/>
+                    <circle cx="17" cy="10" r="1.2" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="label">Impression</span>
+              </button>
+              <button class="card action" id="btnConception" aria-label="Conception" data-url="https://docs.google.com/forms/d/e/1FAIpQLSdUrnIVhHYpBCss6WQB8qh1yDScg-wNGtQ7pm7K6_5gr4ravw/viewform?usp=publish-editor">
+                <span class="ico ico-badge design" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l6 6-6 14-6-14 6-6z"/>
+                    <path d="M12 2v6"/>
+                    <circle cx="12" cy="13" r="1.2" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="label">Conception</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Panneau images (sous la carte Impression/Conception) -->
+          <div class="card" id="orderAds" role="region" aria-label="Promotions">
+            <div class="ads-viewport">
+              <div class="ads-track" id="orderAdsTrack">
+                <div class="ad-slide">
+                  <img src="images/image 1.jpg" alt="Promotion 1 - Imprimerie" loading="lazy" />
+                </div>
+                <div class="ad-slide">
+                  <img src="images/image 2.jpg" alt="Promotion 2 - Imprimerie" loading="lazy" />
+                </div>
+                <div class="ad-slide">
+                  <img src="images/image 3.jpg" alt="Promotion 3 - Imprimerie" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="ads-dots" id="orderAdsDots" role="tablist" aria-label="Navigation promotions">
+              <button aria-label="Promo 1" aria-selected="true" role="tab" data-index="0"></button>
+              <button aria-label="Promo 2" aria-selected="false" role="tab" data-index="1"></button>
+              <button aria-label="Promo 3" aria-selected="false" role="tab" data-index="2"></button>
+            </div>
+          </div>
+
+          <!-- Options existantes -->
+        </section>
+
+        <div id="actionBar" class="action-bar hidden" role="region" aria-live="polite">
+          <div class="bar-content">
+            <div class="count"><strong id="selectedCount">0</strong> sélectionné(s)</div>
+            <button id="btnValidate" class="btn btn-primary">Valider</button>
+          </div>
+        </div>
+
+        <!-- Modale de résumé -->
+        <div id="modalSummary" class="modal" aria-hidden="true" hidden>
+          <div class="modal-backdrop" data-close></div>
+          <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
+            <header class="modal-header">
+              <h3 id="summaryTitle">Résumé de votre sélection</h3>
+              <button class="icon-btn" data-close aria-label="Fermer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              </button>
+            </header>
+            <div class="modal-body">
+              <ul id="summaryList" class="summary-list"></ul>
+            </div>
+            <footer class="modal-footer">
+              <button class="btn btn-secondary" data-close>Modifier</button>
+              <button id="btnSend" class="btn btn-primary">Envoyer ma demande</button>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden>Votre demande a été envoyée ✅</div>
+
+    <!-- Google Identity Services (One Tap) -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
